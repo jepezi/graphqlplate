@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "u": "npm-run-all update-schema copy-schema",
+    "update-schema": "babel-node updateSchema.js --presets=env,stage-2 --plugins=relay",
+    "copy-schema": "cp schema.graphql ../plate/"
+  },
   "dependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-relay": "^1.1.0",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.5.1",
@@ -11,8 +18,9 @@
     "babel-register": "^6.24.1",
     "body-parser": "^1.17.2",
     "express": "^4.15.3",
-    "graphql": "^0.10.1",
+    "graphql": "^0.10.3",
     "graphql-relay": "^0.5.2",
-    "graphql-server-express": "^0.8.0"
+    "graphql-server-express": "^0.8.0",
+    "npm-run-all": "^4.0.2"
   }
 }
